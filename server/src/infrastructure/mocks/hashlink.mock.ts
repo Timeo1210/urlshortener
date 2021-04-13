@@ -21,3 +21,18 @@ export const getLinkByHash = async (
     link: linkhash.url,
   };
 };
+
+export interface postLinkInputProps {
+  link: string;
+  hash: string;
+}
+
+export const postLink = async (command: postLinkInputProps): Promise<void> => {
+  const id = data.length;
+
+  data.push({
+    id,
+    hash: command.hash,
+    url: command.link,
+  });
+};
