@@ -11,9 +11,9 @@ const data = [
   { id: 2, hash: "bbbbbbbb", url: "https://www.instagram.com" },
 ];
 
-export const getLinkByHash = async (
+const getLinkByHash = (
   query: getLinkByHashInputProps
-): Promise<getLinkByHashOutputProps> => {
+): getLinkByHashOutputProps => {
   const linkhash = data.find((row) => row.hash === query.hash);
 
   if (!linkhash) return { link: "" };
@@ -27,7 +27,7 @@ export interface postLinkInputProps {
   hash: string;
 }
 
-export const postLink = async (command: postLinkInputProps): Promise<void> => {
+const postLink = (command: postLinkInputProps): void => {
   const id = data.length;
 
   data.push({
@@ -35,4 +35,9 @@ export const postLink = async (command: postLinkInputProps): Promise<void> => {
     hash: command.hash,
     url: command.link,
   });
+};
+
+export const hashlinkMock = {
+  getLinkByHash,
+  postLink,
 };

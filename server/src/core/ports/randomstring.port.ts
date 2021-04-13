@@ -1,8 +1,12 @@
 import {
-  generateString,
+  randomstringAdapter,
   generateStringOutputProps,
-} from "@/infrastructure/randomstring/index";
+} from "@/infrastructure/adapters/randomstring/randomstring.adapter";
 
-export const generateStringPort = (): generateStringOutputProps => {
-  return generateString();
+const generateStringPort = (): generateStringOutputProps => {
+  return randomstringAdapter.generateString();
+};
+
+export const randomstringPort = {
+  generateStringPort,
 };

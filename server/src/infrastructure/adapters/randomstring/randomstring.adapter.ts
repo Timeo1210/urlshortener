@@ -4,11 +4,15 @@ export interface generateStringOutputProps {
   hash: string;
 }
 
-export const generateString = (): generateStringOutputProps => {
+const generateString = (): generateStringOutputProps => {
   return {
     hash: randomstring.generate({
       length: 8,
       charset: "hex",
     }),
   };
+};
+
+export const randomstringAdapter = {
+  generateString,
 };

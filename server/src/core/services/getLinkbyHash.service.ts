@@ -2,10 +2,14 @@ import {
   getLinkByHashQueryInput,
   getLinkByHashQueryResponse,
 } from "@/core/queries/getLinkByHash.query";
-import HashlinkPort from "@/core/ports/hashlink.port";
+import { hashlinkPort } from "@/core/ports/hashlink.port";
 
-export const getLinkbyHash = async (
+const getLinkbyHash = async (
   query: getLinkByHashQueryInput
 ): Promise<getLinkByHashQueryResponse> => {
-  return HashlinkPort.getLinkByHashPort(query);
+  return hashlinkPort.getLinkByHashPort(query);
+};
+
+export const getLinkByHashService = {
+  getLinkbyHash,
 };
