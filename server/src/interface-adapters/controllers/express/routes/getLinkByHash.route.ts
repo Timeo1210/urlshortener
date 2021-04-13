@@ -1,9 +1,18 @@
 import express from "express";
 
+import { getLinkByHashRequestDTO } from "@/interface-adapters/dtos/getLinkByHash/getLinkByHash.request.dto";
+import { getLinkByHashResponseDTO } from "@/interface-adapters/dtos/getLinkByHash/getLinkByHash.response.dto";
+
+import { getLinkByHashService } from "@/core/services/getLinkbyHash.service";
+
 const router = express.Router();
 
-router.get("/:id", (_, res) => {
-  res.json({ hello: "world" });
+router.get("/:id", async (req, res) => {
+  const requestDTO = new getLinkByHashRequestDTO(req.params.id);
+  const responseService = await getLinkByHashService.getLinkbyHash(requestDTO);
+  const responseDTO = new getLinkByHashResponseDTO(responseService.link);
+
+  res.json(responseDTO);
 });
 
 export const getLinkByHashRoute = router;
