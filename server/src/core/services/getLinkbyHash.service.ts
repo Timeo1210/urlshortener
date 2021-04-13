@@ -4,10 +4,8 @@ import {
 } from "@/core/queries/getLinkByHash.query";
 import HashlinkPort from "@/core/ports/hashlink.port";
 
-const getLinkbyHash = async (
+export const getLinkbyHash = async (
   query: getLinkByHashQueryInput
 ): Promise<getLinkByHashQueryResponse> => {
   return HashlinkPort.getLinkByHashPort(query);
 };
-
-export { getLinkbyHash };
