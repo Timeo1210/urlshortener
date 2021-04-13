@@ -1,7 +1,10 @@
 import { getLinkByHashService } from "@/core/services/getLinkbyHash.service";
 import { postLinkService } from "@/core/services/postLink.service";
 
+import { initControllers } from "@/interface-adapters/controllers/init";
+
 (async () => {
+  initControllers.init();
   console.log(
     "getLinkByHash:",
     await getLinkByHashService.getLinkbyHash({ hash: "hhhhhhhh" })
