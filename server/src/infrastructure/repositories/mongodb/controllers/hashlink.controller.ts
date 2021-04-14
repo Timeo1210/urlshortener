@@ -12,7 +12,7 @@ export interface getHashlinkByHashRequest {
 
 const getHashlinkByHash = async (
   request: getHashlinkByHashRequest
-): Promise<HashlinkInterface | Record<string, unknown>> => {
+): Promise<HashlinkInterface | Record<string, never>> => {
   const hashlinkDocument = (await Hashlink.findOne({
     hash: request.hash,
   }).lean()) as LeanDocument<HashlinkDocumentInterface>;
@@ -26,13 +26,13 @@ const getHashlinkByHash = async (
 
 export interface HashlinkRequest {
   hash: string;
-  url: string;
+  link: string;
 }
 
 const postHashlink = async (request: HashlinkRequest): Promise<void> => {
   const newHashlink = new Hashlink({
     hash: request.hash,
-    url: request.url,
+    url: request.link,
   });
   await newHashlink.save();
 };
