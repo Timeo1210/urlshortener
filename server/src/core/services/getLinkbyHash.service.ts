@@ -7,7 +7,7 @@ import { hashlinkPort } from "@/core/ports/hashlink.mock.port";
 const getLinkbyHash = async (
   query: getLinkByHashQueryInput
 ): Promise<getLinkByHashQueryResponse> => {
-  return hashlinkPort.getLinkByHashPort(query);
+  return hashlinkPort.getLinkByHash(query);
 };
 
 export const getLinkByHashService = {

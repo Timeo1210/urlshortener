@@ -10,7 +10,7 @@ const postLink = async (
   command: postLinkCommandInput
 ): Promise<postLinkCommandResponse> => {
   const { hash } = randomstringPort.generateStringPort();
-  hashlinkPort.postLinkPort({
+  hashlinkPort.postLink({
     link: command.link,
     hash,
   });

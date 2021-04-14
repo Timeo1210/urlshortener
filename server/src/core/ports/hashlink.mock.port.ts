@@ -5,17 +5,17 @@ import {
   hashlinkMock,
 } from "@/infrastructure/mocks/hashlink.mock";
 
-const getLinkByHashPort = async (
+const getLinkByHash = async (
   query: getLinkByHashInputProps
 ): Promise<getLinkByHashOutputProps> => {
   return hashlinkMock.getLinkByHash(query);
 };
 
-const postLinkPort = async (command: postLinkInputProps): Promise<void> => {
+const postLink = async (command: postLinkInputProps): Promise<void> => {
   hashlinkMock.postLink(command);
 };
 
 export const hashlinkPort = {
-  getLinkByHashPort,
-  postLinkPort,
+  getLinkByHash,
+  postLink,
 };
