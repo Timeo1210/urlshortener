@@ -3,7 +3,7 @@ import {
   postLinkCommandResponse,
 } from "@/core/commands/postLink.command";
 
-import { hashlinkPort } from "@/core/ports/hashlink.port";
+import { hashlinkPort } from "@/core/ports/hashlink.mock.port";
 import { randomstringPort } from "@/core/ports/randomstring.port";
 
 const postLink = async (

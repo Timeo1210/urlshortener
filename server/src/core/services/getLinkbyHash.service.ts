@@ -2,7 +2,7 @@ import {
   getLinkByHashQueryInput,
   getLinkByHashQueryResponse,
 } from "@/core/queries/getLinkByHash.query";
-import { hashlinkPort } from "@/core/ports/hashlink.port";
+import { hashlinkPort } from "@/core/ports/hashlink.mock.port";
 
 const getLinkbyHash = async (
   query: getLinkByHashQueryInput
