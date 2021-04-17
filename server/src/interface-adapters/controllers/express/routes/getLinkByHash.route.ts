@@ -9,6 +9,10 @@ const router = express.Router();
 
 router.get("/:id", async (req, res) => {
   const requestDTO = new getLinkByHashRequestDTO(req.params.id);
+  if (!requestDTO.validate()) {
+    res.sendStatus(400);
+    return;
+  }
   const responseService = await getLinkByHashService.getLinkbyHash(requestDTO);
   const responseDTO = new getLinkByHashResponseDTO(responseService.link);
 

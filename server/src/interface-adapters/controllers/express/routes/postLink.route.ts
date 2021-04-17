@@ -9,6 +9,10 @@ const router = express.Router();
 
 router.post("/generate", async (req, res) => {
   const requestDTO = new postLinkRequestDTO(req.body.link);
+  if (!requestDTO.validate()) {
+    res.sendStatus(400);
+    return;
+  }
   const responseService = await postLinkService.postLink(requestDTO);
   const responseDTO = new postLinkResponseDTO(responseService.redirect);
 
