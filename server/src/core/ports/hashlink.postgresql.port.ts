@@ -1,8 +1,8 @@
+import { hashlinkController } from "@/infrastructure/repositories/postgresql/controllers/hashlink.controller";
 import {
-  hashlinkController,
   getHashlinkByHashRequest,
-  HashlinkRequest,
-} from "@/infrastructure/repositories/postgresql/controllers/hashlink.controller";
+  postHashlinkRequest,
+} from "@/infrastructure/repositories/interfaces/hashlink/hashlink.controller.interface";
 
 interface getLinkByHashResponseProps {
   link: string;
@@ -20,7 +20,7 @@ const getLinkByHash = async (
   };
 };
 
-const postLink = async (command: HashlinkRequest): Promise<void> => {
+const postLink = async (command: postHashlinkRequest): Promise<void> => {
   await hashlinkController.postHashlink(command);
 };
 

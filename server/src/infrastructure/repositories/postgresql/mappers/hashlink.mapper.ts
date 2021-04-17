@@ -1,5 +1,5 @@
 import { Hashlink } from "../entities/Hashlink.entity";
-import { HashlinkInterface } from "../controllers/hashlink.controller";
+import { HashlinkInterface } from "@/infrastructure/repositories/interfaces/hashlink/hashlink.interface";
 
 const returnHashlinkFromQuery = (query: Hashlink): HashlinkInterface => {
   return {

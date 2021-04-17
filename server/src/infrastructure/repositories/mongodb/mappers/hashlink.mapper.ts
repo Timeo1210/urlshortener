@@ -1,9 +1,6 @@
 import { LeanDocument } from "mongoose";
-import {
-  HashlinkDocumentInterface,
-  HashlinkInterface,
-} from "../interfaces/hashlink.interface";
-import {} from "../entities/Hashlink.entity";
+import { HashlinkDocumentInterface } from "../interfaces/hashlink.interface.custom";
+import { HashlinkInterface } from "@/infrastructure/repositories/interfaces/hashlink/hashlink.interface";
 
 const returnHashlinkFromLeanDocument = (
   hashlinkQuery: LeanDocument<HashlinkDocumentInterface>

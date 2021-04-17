@@ -1,19 +1,14 @@
 import { Hashlink } from "../entities/Hashlink.entity";
 import { hashlinkMapper } from "../mappers/hashlink.mapper";
-
-export interface HashlinkInterface {
-  id: number;
-  hash: string;
-  link: string;
-}
-
-export interface getHashlinkByHashRequest {
-  hash: string;
-}
+import {
+  getHashlinkByHashRequest,
+  getHashlinkByHashResponse,
+  postHashlinkRequest,
+} from "@/infrastructure/repositories/interfaces/hashlink/hashlink.controller.interface";
 
 const getHashlinkByHash = async (
   request: getHashlinkByHashRequest
-): Promise<HashlinkInterface | Record<string, never>> => {
+): Promise<getHashlinkByHashResponse> => {
   const hashlinkQuery = await Hashlink.findOne({
     where: {
       hash: request.hash,
@@ -28,12 +23,7 @@ const getHashlinkByHash = async (
   return hashlinkResponse;
 };
 
-export interface HashlinkRequest {
-  hash: string;
-  link: string;
-}
-
-const postHashlink = async (request: HashlinkRequest): Promise<void> => {
+const postHashlink = async (request: postHashlinkRequest): Promise<void> => {
   const newHashlink = Hashlink.build({
     hash: request.hash,
     url: request.link,
