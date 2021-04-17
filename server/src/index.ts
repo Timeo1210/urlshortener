@@ -5,8 +5,8 @@ import { initControllers } from "@/interface-adapters/controllers/init";
 import { initRepositories } from "@/infrastructure/repositories/init";
 
 (async () => {
-  initControllers.init();
-  initRepositories.init();
+  await initControllers.init();
+  await initRepositories.init();
   console.log(
     "getLinkByHash:",
     await getLinkByHashService.getLinkbyHash({ hash: "hhhhhhhh" })
