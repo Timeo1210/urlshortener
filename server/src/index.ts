@@ -1,3 +1,5 @@
+import "dotenv-safe/config";
+
 import { getLinkByHashService } from "@/core/services/getLinkbyHash.service";
 import { postLinkService } from "@/core/services/postLink.service";
 
