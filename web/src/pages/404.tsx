@@ -7,9 +7,7 @@ const Custom404 = () => (
       Sorry that page doesn&apos;t exist !
     </h1>
     <Link href="/">
-      <a className="bg-blue-600 font-bold px-6 py-3 text-2xl rounded-md">
-        Return Home
-      </a>
+      <a className="button">Return Home</a>
     </Link>
   </div>
 );

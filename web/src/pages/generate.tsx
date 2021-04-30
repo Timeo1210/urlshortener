@@ -60,11 +60,7 @@ const Generate = () => {
           />
         </label>
       </div>
-      <button
-        type="submit"
-        onClick={shortURL}
-        className="bg-blue-600 font-bold mt-12 tracking-wider px-6 py-3 text-2xl rounded-md"
-      >
+      <button type="submit" onClick={shortURL} className="button mt-12">
         Shorten
       </button>
     </div>
