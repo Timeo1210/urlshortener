@@ -19,6 +19,9 @@
     "quotes": "off",
     "@typescript-eslint/quotes": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-one-expression-per-line": "off",
+    // "comma-dangle": "off",
+    "@typescript-eslint/comma-dangle": "off"
   }
 }
