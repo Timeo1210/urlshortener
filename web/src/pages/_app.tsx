@@ -1,6 +1,7 @@
 import React from "react";
 import "@/styles/globals.css";
 import { QueryClientProvider, QueryClient } from "react-query";
+import Footer from "@/components/Footer";
 import { ReactQueryDevtools } from "react-query/devtools";
 import type { AppProps } from "next/app";
 
@@ -12,6 +13,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
       <Component {...pageProps} />
       <ReactQueryDevtools />
     </QueryClientProvider>
+    <Footer />
   </>
 );
 
