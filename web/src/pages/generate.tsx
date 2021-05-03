@@ -32,7 +32,7 @@ const Generate = () => {
   const shortURL = async () => {
     if (inputRef.current === null) return;
     const data = await mutation.mutateAsync({
-      link: "https://natek.cf",
+      link: inputRef.current.value,
     });
 
     inputRef.current.value = buildURLFromRedirect(data);
