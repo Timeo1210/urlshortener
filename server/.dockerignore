@@ -1,0 +1,8 @@
+node_modules
+dist
+*.tar
+*.md
+src
+.eslintrc.json
+tsconfig.json
+webpack.prod.js
